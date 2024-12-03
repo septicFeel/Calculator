@@ -3,14 +3,14 @@
 
 int main() {
     // dynamic memory allocation calculator
-    int* numberOne = NULL;
-    int* numberTwo = NULL;
-    float result;
+    double* numberOne = NULL;
+    double* numberTwo = NULL;
+    double result;
     char operation;
 
     // memory allocation
-    numberOne = (int*)malloc(sizeof(int));
-    numberTwo = (int*)malloc(sizeof(int));
+    numberOne = (double*)malloc(sizeof(double));
+    numberTwo = (double*)malloc(sizeof(double));
 
     // memory allocation verification
     if (numberOne == NULL || numberTwo == NULL) {
@@ -20,11 +20,11 @@ int main() {
 
     // first number input
     printf("Introduce the first number: \n");
-    scanf("%d", numberOne); // read the first value in a pointer
+    scanf("%lf", numberOne); // read the first value in a pointer
 
     // second number input
     printf("Introduce the second number: \n");
-    scanf("%d", numberTwo);
+    scanf("%lf", numberTwo);
 
     // operation input
     printf("Introduce the operation (+, -, *, /): \n");
@@ -34,23 +34,23 @@ int main() {
     switch (operation) {
         case '+':
             result = *numberOne + *numberTwo; // de-reference
-            printf("The sum is: %.2f\n", result);
+            printf("The sum is: %.4f\n", result);
             break;
 
         case '-':
             result = *numberOne - *numberTwo;
-            printf("The result of the subtraction is: %.2f\n", result);
+            printf("The result of the subtraction is: %.4f\n", result);
             break;
 
         case '*':
             result = *numberOne * *numberTwo;
-            printf("The result of the multiplication is: %.2f\n", result);
+            printf("The result of the multiplication is: %.4lf\n", result);
             break;
 
         case '/':
             if (*numberTwo != 0) {
                 result = (float)(*numberOne) / *numberTwo; 
-                printf("The result of the division is: %.2f\n", result);
+                printf("The result of the division is: %.4f\n", result);
             } else {
                 printf("Error: Division by zero not allowed.\n");
             }
